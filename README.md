@@ -1,2 +1,2 @@
 # candidatolimpo
-Ttrabalho integrado, 7º período
+Trabalho integrado, 7º período
