@@ -8,9 +8,15 @@ using System.Web;
 using System.Web.Mvc;
 using candidatolimpo.Models;
 using System.IO;
+using System.Web.Script.Serialization;
 
 namespace candidatolimpo.Controllers
 {
+    public class myObject
+    {
+        public string name { get; set; }
+        public int age { get; set; }
+    }
     public class PerfilEleitorsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -18,6 +24,20 @@ namespace candidatolimpo.Controllers
         // GET: PerfilEleitors
         public ActionResult Index()
         {
+            Uri uri = new Uri(@"http://trabalhofinal-com.umbler.net/api/consultaeleitorado/1");
+            WebRequest webRequest = WebRequest.Create(uri);
+            WebResponse response = webRequest.GetResponse();
+            StreamReader streamReader = new StreamReader(response.GetResponseStream());
+            String s = streamReader.ReadToEnd();
+
+
+
+            JavaScriptSerializer js = new JavaScriptSerializer();            
+            List<PerfilEleitor> lstPerfil = js.Deserialize<List<PerfilEleitor>>(s);
+
+
+            PerfilEleitor perfilEleitor = js.Deserialize<PerfilEleitor>(s);
+
             consultaWebService();
             List<PerfilEleitor> pfl = new List<PerfilEleitor>();
             return View(pfl);
@@ -128,12 +148,20 @@ namespace candidatolimpo.Controllers
         }
         protected List<PerfilEleitor> consultaWebService()
         {
-            Uri uri = new Uri(@"http://trabalhofinal-com.umbler.net/api/consultaeleitorado/1");
+            Uri uri = new Uri(@"http://trabalhofinal-com.umbler.net/api/consultaeleitorado");
             WebRequest webRequest = WebRequest.Create(uri);
             WebResponse response = webRequest.GetResponse();
             StreamReader streamReader = new StreamReader(response.GetResponseStream());
             String responseData = streamReader.ReadToEnd();
 
+
+            //PerfilEleitor myDeserializedObj = (PerfilEleitor)JavaScriptConverte.DeserializerObject(Request["jsonString"], typeof(PerfilEleitor));
+
+            List<PerfilEleitor> myDeserializedObjList = (List<PerfilEleitor>)Newtonsoft.Json.JsonConvert.DeserializeObject(Request[responseData], typeof(List<PerfilEleitor>));
+
+
+
+            String responseData2 = streamReader.ReadToEnd();
 
 
             //Console.WriteLine(responseData);

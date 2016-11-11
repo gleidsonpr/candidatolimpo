@@ -7,32 +7,35 @@ namespace candidatolimpo.Models
 {
     public class PerfilEleitor
     {
-        int id;
-        int periodo;
+        int? id;
+        int? periodo;
         string uf;
         string municipio;
         string sexo;
         string faixa_etaria;
         string grau_de_escolaridade;
-        int cod_municipio_tse;
-        int nr_zona;
-        int qtd_eletores_no_perfil;
+        int? cod_municipio_tse;
+        int? nr_zona;
+        int? qtd_eletores_no_perfil;
 
-        public PerfilEleitor(int id, int periodo, string uf, string municipio, string sexo, string faixa_etaria, string grau_de_escolaridade, int cod_municipio_tse, int nr_zona, int qtd_eletores_no_perfil)
-        {
-            Id = id;
-            Periodo = periodo;
-            Uf = uf;
-            Municipio = municipio;
-            Sexo = sexo;
-            Faixa_etaria = faixa_etaria;
-            Grau_de_escolaridade = grau_de_escolaridade;
-            Cod_municipio_tse = cod_municipio_tse;
-            Nr_zona = nr_zona;
-            Qtd_eletores_no_perfil = qtd_eletores_no_perfil;
-        }
 
-        public int Id
+    
+
+        //public PerfilEleitor(int id, int periodo, string uf, string municipio, int cod_municipio_tse, int nr_zona, string sexo, string faixa_etaria, string grau_de_escolaridade,   int qtd_eletores_no_perfil)
+        //{
+        //    Id = id;
+        //    Periodo = periodo;
+        //    Uf = uf;
+        //    Municipio = municipio;
+        //    Sexo = sexo;
+        //    Faixa_etaria = faixa_etaria;
+        //    Grau_de_escolaridade = grau_de_escolaridade;
+        //    Cod_municipio_tse = cod_municipio_tse;
+        //    Nr_zona = nr_zona;
+        //    Qtd_eletores_no_perfil = qtd_eletores_no_perfil;
+        //}
+
+        public int? Id
         {
             get
             {
@@ -45,7 +48,7 @@ namespace candidatolimpo.Models
             }
         }
 
-        public int Periodo
+        public int? Periodo
         {
             get
             {
@@ -123,7 +126,7 @@ namespace candidatolimpo.Models
             }
         }
 
-        public int Cod_municipio_tse
+        public int? Cod_municipio_tse
         {
             get
             {
@@ -136,7 +139,7 @@ namespace candidatolimpo.Models
             }
         }
 
-        public int Nr_zona
+        public int? Nr_zona
         {
             get
             {
@@ -149,7 +152,7 @@ namespace candidatolimpo.Models
             }
         }
 
-        public int Qtd_eletores_no_perfil
+        public int? Qtd_eletores_no_perfil
         {
             get
             {
