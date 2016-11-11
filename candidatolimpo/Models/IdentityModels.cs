@@ -29,5 +29,9 @@ namespace candidatolimpo.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<candidatolimpo.Models.ConsultaCandidato> ConsultaCandidatoes { get; set; }
+
+        public System.Data.Entity.DbSet<candidatolimpo.Models.PerfilEleitor> PerfilEleitors { get; set; }
     }
 }

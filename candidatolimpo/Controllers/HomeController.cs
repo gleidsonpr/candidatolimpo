@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace candidatolimpo.Controllers
 {
@@ -10,6 +14,8 @@ namespace candidatolimpo.Controllers
     {
         public ActionResult Index()
         {
+
+
             return View();
         }
 
@@ -26,5 +32,7 @@ namespace candidatolimpo.Controllers
 
             return View();
         }
+
+
     }
 }
