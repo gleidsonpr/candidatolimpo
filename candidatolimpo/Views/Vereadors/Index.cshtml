@@ -1,0 +1,125 @@
+﻿@model IEnumerable<candidatolimpo.Models.Vereador>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>COMPARAR VEREADORES DE SUA CIDADE</h2>
+@using (Html.BeginForm("Index", "Vereadors", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-8">
+            Digite a UF: @Html.TextBox("uf")
+            Digite a cidade: @Html.TextBox("cidade")
+            <br /><br />
+            <fieldset> <legend>Digite um critério abaixo ou os 3 juntos, não use busca por 2 critérios</legend>
+                Digite a escolaridade: @Html.TextBox("escolaridade")
+            <br/><br />
+                Digite o sexo: @Html.TextBox("sexo")
+            <br/><br />
+                Digite o partido: @Html.TextBox("partido")
+            </fieldset>
+            <input type="submit" value="Consultar" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+@Html.ActionLink("Consultar prefeitos", "Index", "Prefeitoes")
+@Html.ActionLink("Consultar eleitores", "Index", "PerfilEleitors")
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome_canditado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero_candidato)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Des_situacao_candidatura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sigla_partido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao_ocupacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Idade_data_eleicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao_sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao_grau_instrucao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao_estado_civil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao_cor_raca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao_nacionalidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Despesa_max_campanha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desc_sit_tot_turno)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome_canditado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero_candidato)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Des_situacao_candidatura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sigla_partido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao_ocupacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idade_data_eleicao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao_sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao_grau_instrucao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao_estado_civil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao_cor_raca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao_nacionalidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Despesa_max_campanha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desc_sit_tot_turno)
+        </td>
+        
+
+    </tr>
+}
+
+</table>

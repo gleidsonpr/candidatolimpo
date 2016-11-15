@@ -1,0 +1,25 @@
+﻿@model IEnumerable<candidatolimpo.Models.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>LOGIN NO SISTEMA</h2>
+@using (Html.BeginForm("Index", "Usuarios", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-8">
+            <fieldset>
+                <legend>Digite CPF e senha para entrar: padão use cpf=00000000000 e senha=admin </legend>
+                Digite o CPF: @Html.TextBox("cpf")
+                Digite a senha: @Html.TextBox("senha")
+
+            </fieldset>
+            <input type="submit" value="Entrar" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+

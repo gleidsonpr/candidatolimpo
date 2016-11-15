@@ -8,32 +8,13 @@ namespace candidatolimpo.Models
     public class PerfilEleitor
     {
         int? id;
-        int? periodo;
-        string uf;
-        string municipio;
         string sexo;
         string faixa_etaria;
         string grau_de_escolaridade;
-        int? cod_municipio_tse;
-        int? nr_zona;
+
         int? qtd_eletores_no_perfil;
 
 
-    
-
-        //public PerfilEleitor(int id, int periodo, string uf, string municipio, int cod_municipio_tse, int nr_zona, string sexo, string faixa_etaria, string grau_de_escolaridade,   int qtd_eletores_no_perfil)
-        //{
-        //    Id = id;
-        //    Periodo = periodo;
-        //    Uf = uf;
-        //    Municipio = municipio;
-        //    Sexo = sexo;
-        //    Faixa_etaria = faixa_etaria;
-        //    Grau_de_escolaridade = grau_de_escolaridade;
-        //    Cod_municipio_tse = cod_municipio_tse;
-        //    Nr_zona = nr_zona;
-        //    Qtd_eletores_no_perfil = qtd_eletores_no_perfil;
-        //}
 
         public int? Id
         {
@@ -48,44 +29,7 @@ namespace candidatolimpo.Models
             }
         }
 
-        public int? Periodo
-        {
-            get
-            {
-                return periodo;
-            }
 
-            set
-            {
-                periodo = value;
-            }
-        }
-
-        public string Uf
-        {
-            get
-            {
-                return uf;
-            }
-
-            set
-            {
-                uf = value;
-            }
-        }
-
-        public string Municipio
-        {
-            get
-            {
-                return municipio;
-            }
-
-            set
-            {
-                municipio = value;
-            }
-        }
 
         public string Sexo
         {
@@ -126,31 +70,6 @@ namespace candidatolimpo.Models
             }
         }
 
-        public int? Cod_municipio_tse
-        {
-            get
-            {
-                return cod_municipio_tse;
-            }
-
-            set
-            {
-                cod_municipio_tse = value;
-            }
-        }
-
-        public int? Nr_zona
-        {
-            get
-            {
-                return nr_zona;
-            }
-
-            set
-            {
-                nr_zona = value;
-            }
-        }
 
         public int? Qtd_eletores_no_perfil
         {

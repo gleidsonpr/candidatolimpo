@@ -1,0 +1,87 @@
+﻿@model IEnumerable<candidatolimpo.Models.Prefeito>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>PREFEITOS DA SUA CIDADE</h2>
+
+@using (Html.BeginForm("Index", "Prefeitoes", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <h4>@ViewBag.Title</h4>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            Digite a UF: @Html.TextBox("uf")
+            Digite a cidade: @Html.TextBox("cidade")
+            <input type="submit" value="Consultar" class="btn btn-default" />
+        </div>
+    </div>
+}
+@Html.ActionLink("Consultar eleitores", "Index", "PerfilEleitors")
+@Html.ActionLink("Consultar vereadores", "Index", "Vereadors")
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome_canditado)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Nome_urna_candidato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sigla_partido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Idade_data_eleicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao_sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao_grau_instrucao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao_estado_civil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao_cor_raca)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome_canditado)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome_urna_candidato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sigla_partido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idade_data_eleicao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao_sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao_grau_instrucao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao_estado_civil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao_cor_raca)
+        </td>
+        
+    </tr>
+}
+
+</table>

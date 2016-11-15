@@ -33,5 +33,11 @@ namespace candidatolimpo.Models
         public System.Data.Entity.DbSet<candidatolimpo.Models.ConsultaCandidato> ConsultaCandidatoes { get; set; }
 
         public System.Data.Entity.DbSet<candidatolimpo.Models.PerfilEleitor> PerfilEleitors { get; set; }
+
+        public System.Data.Entity.DbSet<candidatolimpo.Models.Prefeito> Prefeitoes { get; set; }
+
+        public System.Data.Entity.DbSet<candidatolimpo.Models.Vereador> Vereadors { get; set; }
+
+        public System.Data.Entity.DbSet<candidatolimpo.Models.Usuario> Usuarios { get; set; }
     }
 }
