@@ -8,7 +8,7 @@ namespace candidatolimpo.Models
     public class Prefeito
     {
 
-        /*classe prefeito com os atributos solicitados no enunciado do exercicio*/
+        /*classe prefeito com os atributos solicitados no enunciado do exercicio de TEC WEB*/
         int id;
         string nome_canditado;
 
