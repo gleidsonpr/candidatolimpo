@@ -17,10 +17,11 @@ namespace candidatolimpo.Controllers
         // GET: Prefeitoes
         public ActionResult Index()
         {
-            ConsultaWebservices consulta = new ConsultaWebservices();
 
-            //CONSULTA WEBSERVICES BUSCA POR PREFEITOS DE ACORDO CO A SELEÇÃO PASSADA NO PARAMETRO
-            List<Prefeito> listaVazia = new List<Prefeito>();//consulta.consultaPrefeito("AC", "CRUZEIRO DO SUL");
+
+
+
+            List<Prefeito> listaVazia = new List<Prefeito>();
 
 
             return View(listaVazia);
@@ -28,7 +29,11 @@ namespace candidatolimpo.Controllers
 
         [HttpPost]
         public ActionResult Index(string uf, string cidade)
-        {
+        {           
+
+            
+             uf = DropDownList.Uf.ListaUfs().Find(item => item.UfId == int.Parse(uf)).Nome;
+
             ConsultaWebservices consulta = new ConsultaWebservices();
             //CONSULTA WEBSERVICES BUSCA POR PREFEITOS DE ACORDO CO A SELEÇÃO PASSADA NO PARAMETRO
             List<Prefeito> lstpf = consulta.consultaPrefeito(uf, cidade);

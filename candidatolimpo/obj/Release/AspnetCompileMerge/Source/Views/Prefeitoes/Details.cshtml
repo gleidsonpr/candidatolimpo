@@ -1,0 +1,82 @@
+﻿@model candidatolimpo.Models.Prefeito
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Prefeito</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome_canditado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome_canditado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome_urna_candidato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome_urna_candidato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sigla_partido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sigla_partido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idade_data_eleicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idade_data_eleicao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao_sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao_sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao_grau_instrucao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao_grau_instrucao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao_estado_civil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao_estado_civil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao_cor_raca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao_cor_raca)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

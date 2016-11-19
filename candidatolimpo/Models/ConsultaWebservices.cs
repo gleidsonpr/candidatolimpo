@@ -132,6 +132,18 @@ namespace candidatolimpo.Models
         }
 
 
+        public StreamReader consultarWebs(string url)
+        {
+            Uri uri = new Uri(@url);
+            WebRequest webRequest = WebRequest.Create(uri);
+            WebResponse response = webRequest.GetResponse();
+            StreamReader streamReader = new StreamReader(response.GetResponseStream());
+
+
+
+            return streamReader;
+
+        }
 
 
         public List<Usuario> usuarioLogin(string cpf, string senha)

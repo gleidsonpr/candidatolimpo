@@ -14,7 +14,7 @@ namespace candidatolimpo.Models
             public int UfId { get; set; }
             public string Nome { get; set; }
 
-            public List<Uf> ListaUfs()
+            public static List<Uf> ListaUfs()
             {
                 return new List<Uf>
             {

@@ -37,7 +37,7 @@ namespace candidatolimpo.Controllers
         {
 
 
-
+            uf = DropDownList.Uf.ListaUfs().Find(item => item.UfId == int.Parse(uf)).Nome;
 
             ConsultaWebservices consulta = new ConsultaWebservices();
             //CONSULTA WEBSERVICES BUSCA POR PREFEITOS DE ACORDO CO A SELEÇÃO PASSADA NO PARAMETRO

@@ -41,7 +41,11 @@ namespace candidatolimpo.Controllers
 
             if(lstpf.Count>0)
             {
-                return RedirectToAction("Index", "Prefeitoes");
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Login falhou, verifique CPF e SENHA')</script>");
             }
 
 

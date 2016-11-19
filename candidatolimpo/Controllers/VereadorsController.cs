@@ -17,10 +17,10 @@ namespace candidatolimpo.Controllers
         // GET: Vereadors
         public ActionResult Index()
         {
-            ConsultaWebservices consulta = new ConsultaWebservices();
 
-            //CONSULTA WEBSERVICES BUSCA POR vereadores DE ACORDO CO A SELEÇÃO PASSADA NO PARAMETRO
-            List<Vereador> listaVazia = new List<Vereador>();//consulta.consult("AC", "CRUZEIRO DO SUL");
+
+
+            List<Vereador> listaVazia = new List<Vereador>();
 
 
             return View(listaVazia);
@@ -29,6 +29,7 @@ namespace candidatolimpo.Controllers
         [HttpPost]
         public ActionResult Index(string uf, string cidade, string escolaridade, string sexo, string partido)
         {
+            uf = DropDownList.Uf.ListaUfs().Find(item => item.UfId == int.Parse(uf)).Nome;
             ConsultaWebservices consulta = new ConsultaWebservices();
             List<Vereador> lstv = new List<Vereador>();
 
