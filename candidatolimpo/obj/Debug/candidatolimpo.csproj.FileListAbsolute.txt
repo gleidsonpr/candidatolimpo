@@ -82,3 +82,4 @@ C:\Users\Gleidson\Source\Repos\candidatolimpo\candidatolimpo\obj\Debug\candidato
 C:\Users\Gleidson\Source\Repos\candidatolimpo\candidatolimpo\obj\Debug\candidatolimpo.pdb
 C:\Users\Gleidson\Source\Repos\candidatolimpo\candidatolimpo\bin\MySql.Data.dll
 C:\Users\Gleidson\Source\Repos\candidatolimpo\candidatolimpo\bin\MySql.Data.xml
+C:\Users\Gleidson\Source\Repos\candidatolimpo\candidatolimpo\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

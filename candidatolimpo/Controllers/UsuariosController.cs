@@ -13,15 +13,12 @@ namespace candidatolimpo.Controllers
     public class UsuariosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        ConsultaWebservices consulta = new ConsultaWebservices();
+        //CONSULTA WEBSERVICES BUSCA POR usuarios DE ACORDO CO A Ssenha e cpf
+        List<Usuario> listaVazia = new List<Usuario>();
         // GET: Usuarios
         public ActionResult Index()
         {
-            ConsultaWebservices consulta = new ConsultaWebservices();
-
-            //CONSULTA WEBSERVICES BUSCA POR usuarios DE ACORDO CO A Ssenha e cpf
-            List<Usuario> listaVazia = new List<Usuario>();
-
 
             return View(listaVazia);
         }
@@ -29,29 +26,45 @@ namespace candidatolimpo.Controllers
         [HttpPost]
         public ActionResult Index(string cpf, string senha)
         {
-            ConsultaWebservices consulta = new ConsultaWebservices();
-            //CONSULTA WEBSERVICES BUSCA POR usuarios DE ACORDO CO A Ssenha e cpf
 
-            List<Usuario> lstpf = new List<Usuario>();
             if (cpf != "" && senha != "")
             {
-                 lstpf = consulta.usuarioLogin(cpf, senha);
-            }
+                if(login(cpf, senha))
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Login falhou, verifique CPF e SENHA')</script>");
+                }
 
-
-            if(lstpf.Count>0)
-            {
-                return RedirectToAction("Index", "Home");
             }
             else
             {
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Login falhou, verifique CPF e SENHA')</script>");
+                Response.Write("<script LANGUAGE='JavaScript' >alert('CPF e/ou SENHA não informado')</script>");
             }
 
 
 
+            return View(listaVazia);
+        }
 
-            return View(lstpf);
+        public bool login(string cpf, string senha)
+        {
+                       
+
+            List<Usuario> lstpf = new List<Usuario>();
+            lstpf = consulta.usuarioLogin(cpf, senha);
+            if (lstpf.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
         }
 
 
