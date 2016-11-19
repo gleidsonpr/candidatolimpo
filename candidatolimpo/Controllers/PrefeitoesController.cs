@@ -49,16 +49,11 @@ namespace candidatolimpo.Controllers
         // GET: Prefeitoes/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Prefeito prefeito = db.Prefeitoes.Find(id);
-            if (prefeito == null)
-            {
-                return HttpNotFound();
-            }
-            return View(prefeito);
+
+            List<Prefeito> listaVazia = new List<Prefeito>();
+
+
+            return View(listaVazia);
         }
 
 

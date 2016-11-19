@@ -82,3 +82,4 @@ C:\Users\Gleidson\Source\Repos\candidatolimpo\candidatolimpo\bin\Microsoft.Owin.
 C:\Users\Gleidson\Source\Repos\candidatolimpo\candidatolimpo\obj\Release\candidatolimpo.csprojResolveAssemblyReference.cache
 C:\Users\Gleidson\Source\Repos\candidatolimpo\candidatolimpo\obj\Release\candidatolimpo.dll
 C:\Users\Gleidson\Source\Repos\candidatolimpo\candidatolimpo\obj\Release\candidatolimpo.pdb
+C:\Users\Gleidson\Source\Repos\candidatolimpo\candidatolimpo\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

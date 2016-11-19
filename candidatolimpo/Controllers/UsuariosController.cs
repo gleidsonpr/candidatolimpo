@@ -26,12 +26,13 @@ namespace candidatolimpo.Controllers
         [HttpPost]
         public ActionResult Index(string cpf, string senha)
         {
+            
 
             if (cpf != "" && senha != "")
             {
                 if(login(cpf, senha))
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Dashboards");
                 }
                 else
                 {
@@ -57,6 +58,7 @@ namespace candidatolimpo.Controllers
             lstpf = consulta.usuarioLogin(cpf, senha);
             if (lstpf.Count > 0)
             {
+                Session["usuarioLogado"] = lstpf[0].Nome;
                 return true;
             }
             else
@@ -66,7 +68,11 @@ namespace candidatolimpo.Controllers
 
 
         }
-
+        public ActionResult Logout()
+        {
+            Session.Remove("usuarioLogado");
+            return RedirectToAction("Index", "Home");
+        }
 
         protected override void Dispose(bool disposing)
         {

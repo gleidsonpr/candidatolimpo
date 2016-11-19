@@ -84,7 +84,7 @@ namespace candidatolimpo.Models
             Assert.AreNotEqual(tst, 0);
         }
         [TestMethod]
-        public void Prefeitos_eleitores_retorna__zero_quando_passar_uf_mg_cidade_bertioga()
+        public void Prefeitos_retorna__zero_quando_passar_uf_mg_cidade_bertioga()
         {
             var retorno = tstPrefeito.consultaPrefeito("MG", "BERTIOGA");
             var tst = retorno.Count;
@@ -93,5 +93,88 @@ namespace candidatolimpo.Models
 
 
 
+    }
+
+    [TestClass]
+    public class TesteVereadores
+    {
+        private ConsultaWebservices tstVereadore;
+
+        [TestInitialize]
+        public void iniciarTestes()
+        {
+            tstVereadore = new ConsultaWebservices();
+        }
+
+        [TestMethod]
+        public void Vereador_retorna_maior_que_zero_quando_passar_uf_MG_cidade_BELO_HORIZONTE()
+        {
+            var retorno = tstVereadore.consultaVereadorCidade("MG", "BELO HORIZONTE");
+            var tst = retorno.Count;
+            Assert.AreNotEqual(tst, 0);
+        }
+        [TestMethod]
+        public void Vereador_retorna__zero_quando_passar_uf_mg_cidade_bertioga()
+        {
+            var retorno = tstVereadore.consultaVereadorCidade("MG", "BERTIOGA");
+            var tst = retorno.Count;
+            Assert.AreEqual(tst, 0);
+        }
+        [TestMethod]
+        public void Vereador_retorna_maior_que_zero_quando_passar_uf_MG_cidade_BELO_HORIZONTE_partido_PP()
+        {
+            var retorno = tstVereadore.consultaVereadorPartido("MG", "BELO HORIZONTE","PP");
+            var tst = retorno.Count;
+            Assert.AreNotEqual(tst, 0);
+        }
+        [TestMethod]
+        public void Vereador_retorna__zero_quando_passar_uf_mg_cidade_bertioga_partido_PP()
+        {
+            var retorno = tstVereadore.consultaVereadorPartido("MG", "BERTIOGA","PP");
+            var tst = retorno.Count;
+            Assert.AreEqual(tst, 0);
+        }
+        [TestMethod]
+        public void Vereador_retorna_maior_que_zero_quando_passar_uf_MG_cidade_BELO_HORIZONTE_sexo_feminino()
+        {
+            var retorno = tstVereadore.consultaVereadorSexo("MG", "BELO HORIZONTE", "FEMININO");
+            var tst = retorno.Count;
+            Assert.AreNotEqual(tst, 0);
+        }
+        [TestMethod]
+        public void Vereador_retorna__zero_quando_passar_uf_mg_cidade_bertioga_sexo_femin()
+        {
+            var retorno = tstVereadore.consultaVereadorSexo("MG", "BERTIOGA", "FEMIN");
+            var tst = retorno.Count;
+            Assert.AreEqual(tst, 0);
+        }
+        [TestMethod]
+        public void Vereador_retorna_maior_que_zero_quando_passar_uf_MG_cidade_BELO_HORIZONTE_escolaridade_ensino_medio_completo()
+        {
+            var retorno = tstVereadore.consultaVereadorEscolaridade("MG", "BELO HORIZONTE", "ENSINO MÉDIO COMPLETO");
+            var tst = retorno.Count;
+            Assert.AreNotEqual(tst, 0);
+        }
+        [TestMethod]
+        public void Vereador_retorna__zero_quando_passar_uf_mg_cidade_bertioga_escolaridade_ensino()
+        {
+            var retorno = tstVereadore.consultaVereadorEscolaridade("MG", "BERTIOGA", "ensino");
+            var tst = retorno.Count;
+            Assert.AreEqual(tst, 0);
+        }
+        [TestMethod]
+        public void Vereador_retorna_maior_que_zero_quando_passar_uf_MG_cidade_BELO_HORIZONTE_escolaridade_ensino_medio_comple_tosexo_feminino_partido_PRP()
+        {
+            var retorno = tstVereadore.consultaVereadorCombinacao("MG", "BELO HORIZONTE", "ENSINO MÉDIO COMPLETO", "FEMININO","PRP");
+            var tst = retorno.Count;
+            Assert.AreNotEqual(tst, 0);
+        }
+        [TestMethod]
+        public void Vereador_retorna__zero_quando_passar_uf_mg_cidade_bertioga_escolaridade_ensino_sexo_femin_partido_PP()
+        {
+            var retorno = tstVereadore.consultaVereadorCombinacao("MG", "BERTIOGA", "ensino", "FEMIN", "PP");
+            var tst = retorno.Count;
+            Assert.AreEqual(tst, 0);
+        }
     }
 }

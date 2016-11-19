@@ -17,7 +17,21 @@ namespace candidatolimpo.Controllers
         // GET: Dashboards
         public ActionResult Index()
         {
-            return View(db.Dashboards.ToList());
+
+
+            if (Session["usuarioLogado"] == null)
+            {
+               
+                return RedirectToAction("Index", "Usuarios");
+            }
+           
+
+
+
+            List<Dashboard> listaVazia = new List<Dashboard>();
+
+
+            return View(listaVazia);
         }       
 
         protected override void Dispose(bool disposing)

@@ -33,6 +33,17 @@
 }
 
 
+
+
+
+
+
+
+
+
+@using Microsoft.AspNet.Identity
+@if (Model.Count()>0)
+{
 <table class="table">
     <tr>
         <th>
@@ -127,3 +138,9 @@
 }
 
 </table>
+}
+else
+{
+<h3>Sem resultado! Faça uma busca</h3>
+
+}

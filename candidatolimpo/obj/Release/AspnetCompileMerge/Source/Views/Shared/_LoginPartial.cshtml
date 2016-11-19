@@ -1,13 +1,13 @@
 ﻿@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated)
+@if (Session["usuarioLogado"]!=null)
 {
-    using (Html.BeginForm("Sair", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    using (Html.BeginForm("Logout", "Usuarios", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("bem vindo(a) " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink("Dashboar   Bem vindo(a) " + Session["usuarioLogado"] + "!", "Index", "Dashboards", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>
@@ -17,5 +17,6 @@ else
 {
     <ul class="nav navbar-nav navbar-right">
         <li>@Html.ActionLink("Entrar", "Index", "Usuarios", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+       
     </ul>
 }
